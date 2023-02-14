@@ -6,7 +6,9 @@ import ApplicationHeader from "./components/ApplicationHeader.vue";
 <template>
   <ApplicationHeader />
   <main>
-    <RouterView />
+    <Suspense>
+      <RouterView />
+    </Suspense>
   </main>
 </template>
 
