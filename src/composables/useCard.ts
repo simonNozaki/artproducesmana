@@ -24,7 +24,9 @@ class Card {
 
   async fetchByName(): Promise<SearchCardResult> {
     const r = (await (
-      await fetch("https://api.scryfall.com/cards/named?exact=forest")
+      await fetch(
+        `https://api.scryfall.com/cards/named?exact=${this._landName}`
+      )
     ).json()) as Original;
     console.log(r);
     const res = {
