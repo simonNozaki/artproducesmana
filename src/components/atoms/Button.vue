@@ -1,5 +1,13 @@
 <!-- eslint-disable vue/multi-word-component-names -->
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+export interface Props {
+  click: () => void;
+}
+
+withDefaults(defineProps<Props>(), {
+  click: () => {},
+});
+</script>
 
 <template>
   <button class="button">
