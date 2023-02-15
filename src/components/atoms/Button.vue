@@ -10,7 +10,7 @@ withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-  <button class="button">
+  <button class="button" @click="click">
     <span class="button-text">
       <slot></slot>
     </span>
@@ -20,8 +20,8 @@ withDefaults(defineProps<Props>(), {
 <style scoped>
 .button {
   @apply
-    rounded-md shadow-sm border px-4 py-2 bg-indigo-200
-    hover:bg-indigo-300
+    rounded-md shadow-sm border px-4 py-2 bg-indigo-300
+    hover:shadow-md
     font-medium;
 }
 
