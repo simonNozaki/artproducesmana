@@ -11,8 +11,7 @@
 }
 
 body {
-  font-family: 'MotoyaAporo';
-  @apply bg-slate-200;
+  @apply bg-gray-300;
 }
 
 @media (hover: hover) {

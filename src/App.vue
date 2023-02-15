@@ -5,7 +5,7 @@ import ApplicationHeader from "./components/ApplicationHeader.vue";
 
 <template>
   <ApplicationHeader />
-  <main>
+  <main class="mt-4">
     <Suspense>
       <RouterView />
     </Suspense>
