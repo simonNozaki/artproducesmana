@@ -5,4 +5,5 @@ export interface SearchCardResult {
   name: string;
   setName: string;
   artClop: string | undefined;
+  flavorText: string;
 }

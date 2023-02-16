@@ -20,6 +20,7 @@ class Card {
       name: r.name,
       setName: r.set_name,
       artClop: r.image_uris?.art_crop,
+      flavorText: r.flavor_text ?? "テキストはありません",
     };
   }
 }
