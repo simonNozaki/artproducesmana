@@ -2,16 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-#app {
-}
-
 @font-face {
   font-family: "MotoyaAporo";
   src: local("MotoyaAporo"), url(./fonts//NtMotoyaAporoStd-W4.otf) format("truetype");
-}
-
-body {
-  @apply bg-gray-300;
 }
 
 @media (hover: hover) {
@@ -22,12 +15,10 @@ body {
 
 @media (min-width: 1024px) {
   body {
-    /* display: flex; */
     place-items: center;
   }
 
   #app {
-    /* display: grid; */
     grid-template-columns: 1fr 1fr;
   }
 }
