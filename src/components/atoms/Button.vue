@@ -20,12 +20,12 @@ withDefaults(defineProps<Props>(), {
 <style scoped>
 .button {
   @apply
-    rounded-md shadow-sm border px-4 py-2 bg-indigo-300
+    rounded-md shadow-sm border px-4 py-2 bg-blue-500
     hover:shadow-md
     font-medium;
 }
 
 .button-text {
-  @apply font-medium text-indigo-800;
+  @apply font-medium text-white;
 }
 </style>

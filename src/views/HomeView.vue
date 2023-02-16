@@ -4,15 +4,21 @@ import Button from "@/components/atoms/Button.vue";
 import { useCard } from "@/composables/useCard";
 import { computed, ref } from "vue";
 const { Card } = useCard();
-let land = ref<SearchCardResult>({
+let land = ref<SearchCardResult>(await Card.ofRandom().fetchByName());
+let previous: SearchCardResult = {
   name: "",
   setName: "",
-  // TODO: 初期表示用の空の写真用意しておく
   artClop: "",
-});
+  flavorText: "",
+};
 
 const setNewCard = async () => {
+  previous = card.value;
   card.value = await Card.ofRandom().fetchByName();
+};
+
+const setPrevious = () => {
+  card.value = previous;
 };
 
 const card = computed<SearchCardResult>({
@@ -31,9 +37,12 @@ const card = computed<SearchCardResult>({
         {{ card.name }} - {{ land.setName }}
       </label>
       <img :src="land.artClop" alt="forest" id="landimage" class="land-image" />
+      <P class="mx-auto mt-3 land-text-flavor"> {{ card.flavorText }} </P>
     </div>
     <div class="flex justify-center">
+      <!-- TODO: 一つ前のカードに戻れるボタン -->
       <Button class="my-10" :click="setNewCard"> 土地をセットする </Button>
+      <Button class="my-10 mx-3" :click="setPrevious"> 前に戻る </Button>
     </div>
   </div>
 </template>
@@ -44,6 +53,10 @@ const card = computed<SearchCardResult>({
 }
 
 .land-image-label {
-  @apply font-medium text-lg text-gray-600;
+  @apply text-lg text-gray-500;
+}
+
+.land-text-flavor {
+  @apply italic text-gray-600;
 }
 </style>

@@ -11,6 +11,6 @@
 
 .title {
   font-family: "MotoyaAporo";
-  @apply text-3xl text-indigo-800;
+  @apply text-3xl text-blue-600;
 }
 </style>
