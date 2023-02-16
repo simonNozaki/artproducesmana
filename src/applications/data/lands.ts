@@ -28,4 +28,16 @@ export const LANDS = [
   "arid-mesa", // 乾燥台地
   "verdant-catacombs", // 新緑の地下墓地
   "misty-rainforest", // 切り深い雨林
+  // Triome
+  "zagoth -triome",
+  "savai-triome",
+  "indatha-triome",
+  "ragurin-triome",
+  "ketria-triome",
+  // Kamigawa
+  "otawara-soaring-city",
+  "takenuma-abandoned-mire",
+  "sokenzan-crucible-of-defiance",
+  "boseiju-who-endures",
+  "eiganjo-seat-of-the-empire",
 ] as const;
