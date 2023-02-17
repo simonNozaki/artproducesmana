@@ -32,7 +32,7 @@ export const LANDS = [
   "zagoth -triome",
   "savai-triome",
   "indatha-triome",
-  "ragurin-triome",
+  "raugrin-triome",
   "ketria-triome",
   // Kamigawa
   "otawara-soaring-city",
