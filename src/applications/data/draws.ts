@@ -1,0 +1,16 @@
+export const DRAWS = [
+  "ponder",
+  "brainstorm",
+  "preordain",
+  "opt",
+  "consider",
+  "ancestral-recall",
+  "omen-of-the-sea",
+  "memory-deluge",
+  "fact-or-fiction",
+  "archmages-charm",
+  "expressive-iteration",
+  "thought-scour",
+  "silver-scrutiny",
+  "deep-analysis",
+] as const;

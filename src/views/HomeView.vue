@@ -3,14 +3,29 @@ import type { SearchCardResult } from "@/applications/types/search.card.result";
 import Button from "@/components/atoms/Button.vue";
 import FormatQuoteOpen from "vue-material-design-icons/FormatQuoteOpen.vue";
 import { useCard } from "@/composables/useCard";
+import { useArtMode } from "@/composables/useArtMode";
 import { computed, ref } from "vue";
 const { Card } = useCard();
-let land = ref<SearchCardResult>(await Card.ofRandom().fetchByName());
+const { artMode } = useArtMode();
+
+let currentCard = ref<SearchCardResult>(
+  await new Card(artMode.value).ofRandom().fetchByName()
+);
 let previous: SearchCardResult | null | undefined;
+const buttonText = computed(() => {
+  switch (artMode.value) {
+    case "lands":
+      return "土地をセットする";
+    case "draws":
+      return "カードを引く";
+    default:
+      return "カードをプレイする";
+  }
+});
 
 const setNewCard = async () => {
-  previous = card.value;
-  card.value = await Card.ofRandom().fetchByName();
+  previous = currentCard.value;
+  card.value = await new Card(artMode.value).ofRandom().fetchByName();
 };
 
 const backToPrevious = () => {
@@ -20,9 +35,9 @@ const backToPrevious = () => {
 };
 
 const card = computed<SearchCardResult>({
-  get: () => land.value,
+  get: () => currentCard.value,
   set: (result: SearchCardResult) => {
-    land.value = result;
+    currentCard.value = result;
   },
 });
 </script>
@@ -31,9 +46,9 @@ const card = computed<SearchCardResult>({
   <div class="container mx-auto w-full p-3 lg:w-1/2">
     <div class="flex flex-col justify-center">
       <label for="landimage" class="land-image-label m-2">
-        {{ card.name }} - {{ land.setName }}
+        {{ card.name }} - {{ card.setName }}
       </label>
-      <img :src="land.artClop" alt="forest" id="landimage" class="land-image" />
+      <img :src="card.artClop" alt="forest" id="landimage" class="land-image" />
       <div class="mt-3">
         <FormatQuoteOpen />
         <p class="mx-auto land-text-flavor">{{ card.flavorText }}</p>
@@ -41,7 +56,7 @@ const card = computed<SearchCardResult>({
     </div>
     <div class="flex justify-center items-center sm:flex-col">
       <div class="my-10">
-        <Button :click="setNewCard"> 土地をセットする </Button>
+        <Button :click="setNewCard"> {{ buttonText }} </Button>
         <Button class="m-3" v-if="previous" :click="backToPrevious">
           前に戻る
         </Button>
