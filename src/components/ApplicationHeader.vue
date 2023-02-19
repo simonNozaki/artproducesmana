@@ -3,17 +3,17 @@ import ApplicationTab from "./ApplicationTab.vue";
 </script>
 
 <template>
-  <header class="application-header">
-    <div class="flex flex-col">
-      <div class="m-5 mb-0">
+  <div class="flex flex-col">
+    <header class="application-header">
+      <div class="grow m-5 mb-0">
         <h1 class="title">CastAnArt</h1>
         <h2 class="subtitle">Magic: The Gatheringのアート</h2>
       </div>
       <div class="flex justify-center">
         <ApplicationTab />
       </div>
-    </div>
-  </header>
+    </header>
+  </div>
 </template>
 
 <style>
