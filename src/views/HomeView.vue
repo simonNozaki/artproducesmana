@@ -5,11 +5,11 @@ import FormatQuoteOpen from "vue-material-design-icons/FormatQuoteOpen.vue";
 import { useCard } from "@/composables/useCard";
 import { useArtMode } from "@/composables/useArtMode";
 import { computed, ref } from "vue";
-const { Card } = useCard();
+const { createRandomCard } = useCard();
 const { artMode } = useArtMode();
 
 let currentCard = ref<SearchCardResult>(
-  await new Card(artMode.value).ofRandom().fetchByName()
+  await createRandomCard(artMode.value).getByName()
 );
 let previous: SearchCardResult | null | undefined;
 const buttonText = computed(() => {
@@ -25,7 +25,7 @@ const buttonText = computed(() => {
 
 const setNewCard = async () => {
   previous = currentCard.value;
-  card.value = await new Card(artMode.value).ofRandom().fetchByName();
+  card.value = await createRandomCard(artMode.value).getByName();
 };
 
 const backToPrevious = () => {
@@ -72,7 +72,7 @@ const card = computed<SearchCardResult>({
 
 .land-image-label {
   /** モバイルでは特に文字を小さくする */
-  @apply text-lg text-gray-500 text-sm md:text-base;
+  @apply text-gray-500 text-sm md:text-base;
 }
 
 .land-text-flavor {
