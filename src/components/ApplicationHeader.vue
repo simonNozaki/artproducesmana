@@ -9,7 +9,7 @@ import ApplicationTab from "./ApplicationTab.vue";
         <h1 class="title">CastAnArt</h1>
         <h2 class="subtitle">Magic: The Gatheringのアート</h2>
       </div>
-      <div class="flex justify-center">
+      <div class="flex justify-center mt-3">
         <ApplicationTab />
       </div>
     </header>
@@ -18,8 +18,7 @@ import ApplicationTab from "./ApplicationTab.vue";
 
 <style>
 .title {
-  font-family: "MotoyaAporo";
-  @apply text-3xl text-blue-600;
+  @apply text-4xl font-medium text-gray-600;
 }
 
 .subtitle {
