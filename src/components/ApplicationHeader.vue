@@ -4,8 +4,8 @@ import ApplicationTab from "./ApplicationTab.vue";
 
 <template>
   <div class="flex flex-col">
-    <header class="application-header">
-      <div class="grow m-5 mb-0">
+    <header>
+      <div class="m-5 mb-0">
         <h1 class="title">CastAnArt</h1>
         <h2 class="subtitle">Magic: The Gatheringのアート</h2>
       </div>
@@ -17,10 +17,6 @@ import ApplicationTab from "./ApplicationTab.vue";
 </template>
 
 <style>
-.application-header {
-  @apply border-b-2 border-gray-100;
-}
-
 .title {
   font-family: "MotoyaAporo";
   @apply text-3xl text-blue-600;
