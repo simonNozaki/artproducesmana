@@ -19,13 +19,11 @@ withDefaults(defineProps<Props>(), {
 
 <style scoped>
 .button {
-  @apply
-    rounded-md shadow-sm border px-4 py-2 bg-blue-500
-    hover:shadow-md
-    font-medium;
+  @apply border border-green-700 px-6 py-4 bg-white
+  hover:bg-gray-100;
 }
 
 .button-text {
-  @apply font-medium text-white;
+  @apply font-medium text-black;
 }
 </style>
