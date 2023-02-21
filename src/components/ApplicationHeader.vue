@@ -6,7 +6,23 @@ import ApplicationTab from "./ApplicationTab.vue";
   <div class="flex flex-col">
     <header>
       <div class="m-5 mb-0">
-        <h1 class="title">CastAnArt</h1>
+        <h1 class="title">
+          <svg
+            viewBox="0 0 100 100"
+            width="20"
+            height="20"
+            class="title-element"
+          >
+            <g transform="translate(0 -1)" fill="none">
+              <circle fill="#CAC5C0" cx="50" cy="50.998" r="50" />
+              <path
+                d="M85.332 59.918h-36.004l13.185-9.383c-4.898-3.887-10.566-5.828-16.984-5.828-3.211 0-5.414.613-6.59 1.836-1.184 1.227-1.777 3.445-1.777 6.654 0 8.873 4.563 18.34 13.691 28.396l-10.391 10.521c-12.09-14.705-18.129-27.844-18.129-39.424 0-6.928 2.086-12.447 6.27-16.545 4.18-4.098 9.746-6.148 16.668-6.148 8.453 0 17.664 3.215 27.641 9.635l7.728-13.182 4.692 33.468z"
+                fill="#0D0F0F"
+              />
+            </g>
+          </svg>
+          <p class="title-element">CastAnArt</p>
+        </h1>
         <h2 class="subtitle">Magic: The Gatheringのアート</h2>
       </div>
       <div class="flex justify-center mt-3">
@@ -18,10 +34,15 @@ import ApplicationTab from "./ApplicationTab.vue";
 
 <style>
 .title {
-  @apply text-4xl font-medium text-gray-600;
+  @apply text-2xl font-medium text-black;
 }
 
 .subtitle {
-  @apply text-base text-gray-500;
+  @apply text-base text-gray-600;
+}
+
+.title-element {
+  display: inline-block;
+  vertical-align: baseline;
 }
 </style>
