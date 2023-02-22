@@ -11,7 +11,6 @@ const { artMode } = useArtMode();
 let currentCard = ref<SearchCardResult>(
   await createRandomCard(artMode.value).getByName()
 );
-let previous: SearchCardResult | null | undefined;
 const buttonText = computed(() => {
   switch (artMode.value) {
     case "lands":
@@ -22,15 +21,24 @@ const buttonText = computed(() => {
       return "カードをプレイする";
   }
 });
+let cardHistories: SearchCardResult[] = [];
+let current = 0;
 
 const setNewCard = async () => {
-  previous = currentCard.value;
   card.value = await createRandomCard(artMode.value).getByName();
+  // 履歴を積みすぎるとバッファを使いすぎるので適度にリフレッシュ
+  if (cardHistories.length > 50) {
+    cardHistories = [];
+    current = 0;
+  }
+  cardHistories.push(card.value);
+  current++;
 };
 
 const backToPrevious = () => {
-  if (previous) {
-    card.value = previous;
+  if (cardHistories.length > 0) {
+    current--;
+    card.value = cardHistories[current];
   }
 };
 
@@ -57,7 +65,7 @@ const card = computed<SearchCardResult>({
     <div class="flex justify-center items-center sm:flex-col">
       <div class="my-10">
         <Button :click="setNewCard"> {{ buttonText }} </Button>
-        <Button class="m-3" v-if="previous" :click="backToPrevious">
+        <Button class="m-3" v-if="current" :click="backToPrevious">
           前に戻る
         </Button>
       </div>
