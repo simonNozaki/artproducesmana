@@ -21,7 +21,7 @@ import ApplicationTab from "./ApplicationTab.vue";
               />
             </g>
           </svg>
-          <p class="title-element">CastAnArt</p>
+          <p class="title-element mx-1">CastAnArt</p>
         </h1>
         <h2 class="subtitle">Magic: The Gatheringのアート</h2>
       </div>
@@ -44,5 +44,9 @@ import ApplicationTab from "./ApplicationTab.vue";
 .title-element {
   display: inline-block;
   vertical-align: baseline;
+}
+
+.title p {
+  @apply bg-white px-1;
 }
 </style>
