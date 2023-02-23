@@ -1,7 +1,8 @@
 <script lang="ts" setup>
 import type { SearchCardResult } from "@/applications/types/search.card.result";
 import Button from "@/components/atoms/Button.vue";
-import FormatQuoteOpen from "vue-material-design-icons/FormatQuoteOpen.vue";
+import SchevronLeft from "@/components/atoms/SchevronLeft.vue";
+import SchevronRight from "@/components/atoms/SchevronRight.vue";
 import { useCard } from "@/composables/useCard";
 import { useArtMode } from "@/composables/useArtMode";
 import { computed, ref } from "vue";
@@ -11,16 +12,14 @@ const { artMode } = useArtMode();
 let currentCard = ref<SearchCardResult>(
   await createRandomCard(artMode.value).getByName()
 );
-const buttonText = computed(() => {
-  switch (artMode.value) {
-    case "lands":
-      return "土地をセットする";
-    case "draws":
-      return "カードを引く";
-    default:
-      return "カードをプレイする";
-  }
+let screenWidth = ref(window.innerWidth);
+window.addEventListener("resize", () => {
+  screenWidth.value = window.innerWidth;
 });
+const screenIsOverMedium = () => {
+  return screenWidth.value >= 768;
+};
+
 let cardHistories: SearchCardResult[] = [];
 let current = 0;
 
@@ -51,22 +50,38 @@ const card = computed<SearchCardResult>({
 </script>
 
 <template>
-  <div class="container mx-auto w-full p-3 lg:w-1/2">
-    <div class="flex flex-col justify-center">
-      <label for="landimage" class="land-image-label m-2">
-        {{ card.name }} - {{ card.setName }}
-      </label>
-      <img :src="card.artClop" alt="forest" id="landimage" class="land-image" />
-      <div class="mt-3">
-        <FormatQuoteOpen />
-        <p class="mx-auto land-text-flavor">{{ card.flavorText }}</p>
+  <!-- PCスクリーン以上のサイズでflexboxのdirectionが縦 -> 横になる -->
+  <div class="flex flex-col md:flex-row justify-center m-4">
+    <!-- 左側 -->
+    <div class="grow">
+      <div class="flex place-content-center">
+        <Button @click="setNewCard" v-if="screenIsOverMedium()">
+          <SchevronLeft size="36" />
+        </Button>
       </div>
     </div>
-    <div class="flex justify-center items-center sm:flex-col">
-      <div class="my-10">
-        <Button :click="setNewCard"> {{ buttonText }} </Button>
-        <Button class="m-3" v-if="current" :click="backToPrevious">
-          前に戻る
+    <div class="lg:w-1/2 mb-5">
+      <div class="flex flex-col justify-center">
+        <label for="landimage" class="land-image-label">
+          {{ card.name }} - {{ card.setName }}
+        </label>
+        <p class="land-text-flavor my-2">{{ card.flavorText }}</p>
+        <img
+          :src="card.artClop"
+          alt="forest"
+          id="landimage"
+          class="land-image"
+        />
+      </div>
+    </div>
+    <!-- 右側 -->
+    <div class="grow">
+      <div class="flex justify-center">
+        <Button @click="setNewCard" v-if="!screenIsOverMedium()" class="mx-3">
+          <SchevronLeft size="36" />
+        </Button>
+        <Button @click="backToPrevious" class="mx-3">
+          <SchevronRight size="36" />
         </Button>
       </div>
     </div>
@@ -80,11 +95,11 @@ const card = computed<SearchCardResult>({
 
 .land-image-label {
   /** モバイルでは特に文字を小さくする */
-  @apply text-gray-500 text-sm md:text-base;
+  @apply text-gray-700 text-base md:text-lg;
 }
 
 .land-text-flavor {
   /** モバイルでは特に文字を小さくする */
-  @apply italic text-gray-600 text-sm md:text-base;
+  @apply italic text-gray-500 text-sm md:text-base;
 }
 </style>
