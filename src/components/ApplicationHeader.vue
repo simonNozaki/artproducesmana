@@ -38,7 +38,7 @@ import ApplicationTab from "./ApplicationTab.vue";
 }
 
 .subtitle {
-  @apply text-base text-gray-600;
+  @apply text-base text-gray-500;
 }
 
 .title-element {
