@@ -11,7 +11,7 @@ const { artMode } = useArtMode();
         <Tab class="mx-1" v-slot="{ selected }">
           <button
             class="tab-button"
-            :class="[selected ? 'border-black' : 'border-gray-300']"
+            :class="[selected ? 'border-green-700' : 'border-gray-300']"
             @click="artMode = 'lands'"
           >
             土地
@@ -20,7 +20,7 @@ const { artMode } = useArtMode();
         <Tab class="mx-1" v-slot="{ selected }">
           <button
             class="tab-button"
-            :class="[selected ? 'border-black' : 'border-gray-300']"
+            :class="[selected ? 'border-green-700' : 'border-gray-300']"
             @click="artMode = 'draws'"
           >
             <div class="flex">
@@ -47,6 +47,6 @@ const { artMode } = useArtMode();
 .tab-button {
   @apply border-b-2 px-4 py-2
   hover:bg-gray-200 focus:outline-none
-    font-medium text-gray-900;
+    font-semibold text-gray-900;
 }
 </style>

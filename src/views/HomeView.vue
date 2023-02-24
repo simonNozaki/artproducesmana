@@ -51,7 +51,7 @@ const card = computed<SearchCardResult>({
 
 <template>
   <!-- PCスクリーン以上のサイズでflexboxのdirectionが縦 -> 横になる -->
-  <div class="flex flex-col md:flex-row justify-center m-4">
+  <div class="flex flex-col md:flex-row justify-center m-3">
     <!-- 左側 -->
     <div class="grow">
       <div class="flex place-content-center">
@@ -63,8 +63,9 @@ const card = computed<SearchCardResult>({
     <div class="lg:w-1/2 mb-5">
       <div class="flex flex-col justify-center">
         <label for="landimage" class="land-image-label">
-          {{ card.name }} - {{ card.setName }}
+          {{ card.name }}
         </label>
+        <p class="land-image-expantion">{{ card.setName }}</p>
         <p class="land-text-flavor my-2">{{ card.flavorText }}</p>
         <img
           :src="card.artClop"
@@ -77,10 +78,10 @@ const card = computed<SearchCardResult>({
     <!-- 右側 -->
     <div class="grow">
       <div class="flex justify-center">
-        <Button @click="setNewCard" v-if="!screenIsOverMedium()" class="mx-3">
+        <Button @click="setNewCard" v-if="!screenIsOverMedium()" class="mx-2">
           <SchevronLeft size="36" />
         </Button>
-        <Button @click="backToPrevious" class="mx-3">
+        <Button @click="backToPrevious" class="mx-2">
           <SchevronRight size="36" />
         </Button>
       </div>
@@ -95,7 +96,11 @@ const card = computed<SearchCardResult>({
 
 .land-image-label {
   /** モバイルでは特に文字を小さくする */
-  @apply text-gray-700 text-base md:text-lg;
+  @apply text-gray-700 text-lg md:text-2xl font-semibold;
+}
+
+.land-image-expantion {
+  @apply text-gray-700 text-base md:text-lg font-medium;
 }
 
 .land-text-flavor {

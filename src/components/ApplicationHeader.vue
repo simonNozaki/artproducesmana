@@ -32,13 +32,13 @@ import ApplicationTab from "./ApplicationTab.vue";
   </div>
 </template>
 
-<style>
+<style scoped>
 .title {
-  @apply text-2xl font-medium text-black;
+  @apply text-3xl font-bold text-black;
 }
 
 .subtitle {
-  @apply text-base text-gray-500;
+  @apply text-base text-gray-700;
 }
 
 .title-element {
