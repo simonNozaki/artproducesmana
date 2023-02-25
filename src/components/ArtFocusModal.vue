@@ -2,6 +2,7 @@
 import { ref } from "vue";
 import { Dialog, DialogPanel, TransitionRoot } from "@headlessui/vue";
 import Button from "./atoms/Button.vue";
+import ModalClose from "./atoms/ModalClose.vue";
 import { createScreen, useScreen } from "@/composables/useScreen";
 
 export interface Props {
@@ -56,15 +57,7 @@ screen.addListenerOnResize(() => {
         <DialogPanel class="dialog-panel flex flex-col">
           <div class="flex justify-end">
             <Button @click="closeArtModal">
-              <svg
-                :width="closeIconSize"
-                :height="closeIconSize"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"
-                ></path>
-              </svg>
+              <ModalClose :size="closeIconSize" />
             </Button>
           </div>
           <img :src="borderClop" alt="forest" class="land-full-image mx-auto" />
@@ -81,10 +74,10 @@ screen.addListenerOnResize(() => {
 
 .land-full-image {
   cursor: pointer;
-  @apply p-5;
+  @apply p-1 lg:p-5;
 }
 
 .dialog-panel {
-  @apply m-4 p-4 rounded-md bg-[#D5D5D5] lg:w-1/2;
+  @apply m-4 p-2 lg:p-4 rounded-md bg-[#D5D5D5] lg:w-1/2;
 }
 </style>
