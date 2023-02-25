@@ -23,6 +23,7 @@ class Card {
       name: r.name,
       setName: r.set_name,
       artClop: r.image_uris?.art_crop,
+      borderClop: r.image_uris?.border_crop,
       flavorText: r.flavor_text ?? "テキストはありません",
     };
     cache.set(this._name, card);

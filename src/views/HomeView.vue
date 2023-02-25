@@ -3,6 +3,7 @@ import type { SearchCardResult } from "@/applications/types/search.card.result";
 import Button from "@/components/atoms/Button.vue";
 import SchevronLeft from "@/components/atoms/SchevronLeft.vue";
 import SchevronRight from "@/components/atoms/SchevronRight.vue";
+import ArtFocusModal from "@/components/ArtFocusModal.vue";
 import { useCard } from "@/composables/useCard";
 import { useArtMode } from "@/composables/useArtMode";
 import { computed, ref } from "vue";
@@ -67,11 +68,10 @@ const card = computed<SearchCardResult>({
         </label>
         <p class="land-image-expantion">{{ card.setName }}</p>
         <p class="land-text-flavor my-2">{{ card.flavorText }}</p>
-        <img
-          :src="card.artClop"
-          alt="forest"
-          id="landimage"
-          class="land-image"
+        <ArtFocusModal
+          :name="card.name"
+          :art-clop="card.artClop"
+          :border-clop="card.borderClop"
         />
       </div>
     </div>
@@ -90,10 +90,6 @@ const card = computed<SearchCardResult>({
 </template>
 
 <style>
-.land-image {
-  @apply rounded-sm shadow-md;
-}
-
 .land-image-label {
   /** モバイルでは特に文字を小さくする */
   @apply text-gray-700 text-lg md:text-2xl font-semibold;
