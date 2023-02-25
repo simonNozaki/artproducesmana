@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: "MotoyaAporo";
-  src: local("MotoyaAporo"), url(./fonts//NtMotoyaAporoStd-W4.otf) format("truetype");
-}
 
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -15,15 +11,5 @@ body {
 @media (hover: hover) {
   a:hover {
     background-color: hsla(160, 100%, 37%, 0.2);
-  }
-}
-
-@media (min-width: 1024px) {
-  body {
-    place-items: center;
-  }
-
-  #app {
-    grid-template-columns: 1fr 1fr;
   }
 }
