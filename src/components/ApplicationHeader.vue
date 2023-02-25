@@ -4,8 +4,8 @@ import ApplicationTab from "./ApplicationTab.vue";
 
 <template>
   <div class="flex flex-col">
-    <header>
-      <div class="m-5 mb-0">
+    <header class="m-5 mb-0">
+      <div class="flex flex-row justify-between">
         <h1 class="title">
           <svg
             viewBox="0 0 100 100"
@@ -23,8 +23,8 @@ import ApplicationTab from "./ApplicationTab.vue";
           </svg>
           <p class="title-element mx-1">CastAnArt</p>
         </h1>
-        <h2 class="subtitle">Magic: The Gatheringのアート</h2>
       </div>
+      <h2 class="subtitle">Magic: The Gatheringのアート</h2>
       <div class="flex justify-center mt-3">
         <ApplicationTab />
       </div>

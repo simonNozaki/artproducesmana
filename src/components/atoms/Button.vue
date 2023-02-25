@@ -19,7 +19,7 @@ withDefaults(defineProps<Props>(), {
 
 <style scoped>
 .button {
-  @apply border border-green-700 px-3 py-2 bg-white
+  @apply border rounded border-green-700 px-3 py-2 bg-white
   hover:bg-gray-100 focus:outline-none;
 }
 
