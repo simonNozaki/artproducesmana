@@ -40,4 +40,11 @@ export const LANDS = [
   "sokenzan-crucible-of-defiance",
   "boseiju-who-endures",
   "eiganjo-seat-of-the-empire",
+  "tendo-ice-bridge",
+  // Eldraine castles
+  "castle-vantress",
+  "castle-ardenvale",
+  "castle-locthwain",
+  "castle-garenbrig",
+  "castle-embereth",
 ] as const;
