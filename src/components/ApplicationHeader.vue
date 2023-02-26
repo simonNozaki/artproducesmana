@@ -1,10 +1,22 @@
 <script setup lang="ts">
+import { ref } from "vue";
 import ApplicationTab from "./ApplicationTab.vue";
+import GlobalNavigation from "./GlobalNavigation.vue";
+
+const navigationIsOpen = ref(false);
+
+const openNavigation = () => {
+  navigationIsOpen.value = true;
+};
+
+const closeNavigation = () => {
+  navigationIsOpen.value = false;
+};
 </script>
 
 <template>
   <div class="flex flex-col">
-    <header class="m-5 mb-0">
+    <header class="m-3 md:m-5 mb-0">
       <div class="flex flex-row justify-between">
         <h1 class="title">
           <svg
@@ -23,7 +35,13 @@ import ApplicationTab from "./ApplicationTab.vue";
           </svg>
           <p class="title-element mx-1">CastAnArt</p>
         </h1>
+        <button class="flex justify-end" @click="openNavigation">
+          <svg :width="36" :height="36" viewBox="0 0 24 24">
+            <path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z"></path>
+          </svg>
+        </button>
       </div>
+      <GlobalNavigation :isShow="navigationIsOpen" @close="closeNavigation" />
       <h2 class="subtitle">Magic: The Gatheringのアート</h2>
       <div class="flex justify-center mt-3">
         <ApplicationTab />
