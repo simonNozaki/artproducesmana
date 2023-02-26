@@ -52,7 +52,7 @@ const card = computed<SearchCardResult>({
 
 <template>
   <!-- PCスクリーン以上のサイズでflexboxのdirectionが縦 -> 横になる -->
-  <div class="flex flex-col md:flex-row justify-center m-3">
+  <div class="flex flex-col md:flex-row justify-center m-3 md:m-6">
     <!-- 左側 -->
     <div class="grow">
       <div class="flex place-content-center">
@@ -78,6 +78,7 @@ const card = computed<SearchCardResult>({
     <!-- 右側 -->
     <div class="grow">
       <div class="flex justify-center">
+        <!-- 画面幅がタブレット以下ではカード更新ボタンを下に設置する -->
         <Button @click="setNewCard" v-if="!screenIsOverMedium()" class="mx-2">
           <SchevronLeft size="36" />
         </Button>
