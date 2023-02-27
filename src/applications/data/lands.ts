@@ -47,4 +47,15 @@ export const LANDS = [
   "castle-locthwain",
   "castle-garenbrig",
   "castle-embereth",
+  // Canopy lands
+  "horizon-canopy",
+  "silent-clearing",
+  "fiery-islet",
+  "nurturing-peatland",
+  "sunbaked-canyon",
+  "waterlogged-grove",
+  // others
+  "prismatic-vista",
+  "cavern-of-souls",
+  "urzas-saga",
 ] as const;
