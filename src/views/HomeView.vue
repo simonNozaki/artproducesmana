@@ -4,6 +4,7 @@ import Button from "@/components/atoms/Button.vue";
 import SchevronLeft from "@/components/atoms/SchevronLeft.vue";
 import SchevronRight from "@/components/atoms/SchevronRight.vue";
 import ArtFocusModal from "@/components/ArtFocusModal.vue";
+import ApplicationTab from "@/components/ApplicationTab.vue";
 import { useCard } from "@/composables/useCard";
 import { useArtMode } from "@/composables/useArtMode";
 import { computed, ref } from "vue";
@@ -51,6 +52,7 @@ const card = computed<SearchCardResult>({
 </script>
 
 <template>
+  <ApplicationTab />
   <!-- PCスクリーン以上のサイズでflexboxのdirectionが縦 -> 横になる -->
   <div class="flex flex-col md:flex-row justify-center m-3 md:m-6">
     <!-- 左側 -->

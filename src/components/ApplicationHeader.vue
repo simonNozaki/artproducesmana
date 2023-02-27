@@ -43,9 +43,6 @@ const closeNavigation = () => {
       </div>
       <GlobalNavigation :isShow="navigationIsOpen" @close="closeNavigation" />
       <h2 class="subtitle">Magic: The Gatheringのアート</h2>
-      <div class="flex justify-center mt-3">
-        <ApplicationTab />
-      </div>
     </header>
   </div>
 </template>
