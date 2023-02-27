@@ -58,6 +58,6 @@ const close = () => {
 }
 
 .navigation-side-bar-link {
-  @apply my-2 underline font-semibold text-base md:text-lg;
+  @apply my-5 underline font-semibold text-base md:text-lg;
 }
 </style>
