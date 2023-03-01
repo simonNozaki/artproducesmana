@@ -22,11 +22,13 @@ const close = () => {
 
 <template>
   <TransitionRoot
+    appear
     :show="isShow"
-    enter="transition-opacity duration-75"
+    enter="transition-opacity duration-[400ms] ease-in-out"
     enter-from="opacity-0"
-    enter-to="opacity-100"
-    leave-from="opacity-100"
+    enter-to="opacity-100 scale-100"
+    leave="transition-opacity duration-[400ms] ease-in-out"
+    leave-from="opacity-100 scale-100"
     leave-to="opacity-0"
   >
     <Dialog as="div" :open="isShow" @close="close">
@@ -41,6 +43,9 @@ const close = () => {
           <ul class="mt-4 md:m-6">
             <li class="navigation-side-bar-link">
               <router-link to="/" @click="close">アート</router-link>
+            </li>
+            <li class="navigation-side-bar-link">
+              <router-link to="about" @click="close">CastAnArtとは</router-link>
             </li>
             <li class="navigation-side-bar-link">
               <router-link to="cards" @click="close">収録カード</router-link>
