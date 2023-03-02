@@ -1,5 +1,10 @@
 <script setup lang="ts">
-import { TransitionRoot, Dialog, DialogPanel } from "@headlessui/vue";
+import {
+  TransitionRoot,
+  TransitionChild,
+  Dialog,
+  DialogPanel,
+} from "@headlessui/vue";
 import Button from "@/components/atoms/Button.vue";
 import ModalClose from "./atoms/ModalClose.vue";
 import { RouterLink } from "vue-router";
@@ -21,37 +26,40 @@ const close = () => {
 </script>
 
 <template>
-  <TransitionRoot
-    appear
-    :show="isShow"
-    enter="transition-opacity duration-[400ms] ease-in-out"
-    enter-from="opacity-0"
-    enter-to="opacity-100 scale-100"
-    leave="transition-opacity duration-[400ms] ease-in-out"
-    leave-from="opacity-100 scale-100"
-    leave-to="opacity-0"
-  >
+  <TransitionRoot :show="isShow">
     <Dialog as="div" :open="isShow" @close="close">
       <div
         class="fixed inset-0 bg-black/40 flex justify-end"
         aria-hidden="true"
       >
-        <DialogPanel class="navigation-side-bar flex flex-col p-6">
-          <div class="flex justify-end">
-            <Button @click="close"><ModalClose /></Button>
-          </div>
-          <ul class="mt-4 md:m-6">
-            <li class="navigation-side-bar-link">
-              <router-link to="/" @click="close">アート</router-link>
-            </li>
-            <li class="navigation-side-bar-link">
-              <router-link to="about" @click="close">CastAnArtとは</router-link>
-            </li>
-            <li class="navigation-side-bar-link">
-              <router-link to="cards" @click="close">収録カード</router-link>
-            </li>
-          </ul>
-        </DialogPanel>
+        <TransitionChild
+          as="template"
+          enter="duration-[400ms] ease-out"
+          enter-from="opacity-0"
+          enter-to="opacity-100"
+          leave="duration-[400ms] ease-in"
+          leave-from="opacity-100"
+          leave-to="opacity-0"
+        >
+          <DialogPanel class="navigation-side-bar flex flex-col p-6">
+            <div class="flex justify-end">
+              <Button @click="close"><ModalClose /></Button>
+            </div>
+            <ul class="mt-4 md:m-6">
+              <li class="navigation-side-bar-link">
+                <router-link to="/" @click="close">アート</router-link>
+              </li>
+              <li class="navigation-side-bar-link">
+                <router-link to="about" @click="close"
+                  >CastAnArtとは</router-link
+                >
+              </li>
+              <li class="navigation-side-bar-link">
+                <router-link to="cards" @click="close">収録カード</router-link>
+              </li>
+            </ul>
+          </DialogPanel>
+        </TransitionChild>
       </div>
     </Dialog>
   </TransitionRoot>

@@ -1,6 +1,11 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import { Dialog, DialogPanel, TransitionRoot } from "@headlessui/vue";
+import {
+  Dialog,
+  DialogPanel,
+  TransitionRoot,
+  TransitionChild,
+} from "@headlessui/vue";
 import Button from "./atoms/Button.vue";
 import ModalClose from "./atoms/ModalClose.vue";
 import { createScreen, useScreen } from "@/composables/useScreen";
@@ -41,27 +46,33 @@ screen.addListenerOnResize(() => {
     class="land-image"
     @click="openArtModal"
   />
-  <TransitionRoot
-    :show="isOpen"
-    enter="transition-opacity duration-75"
-    enter-from="opacity-0"
-    enter-to="opacity-100"
-    leave-from="opacity-100"
-    leave-to="opacity-0"
-  >
+  <TransitionRoot :show="isOpen">
     <Dialog as="div" :open="isOpen" @close="closeArtModal">
       <div
         class="fixed inset-0 bg-black/40 flex justify-center"
         aria-hidden="true"
       >
-        <DialogPanel class="dialog-panel flex flex-col">
-          <div class="flex justify-end">
-            <Button @click="closeArtModal">
-              <ModalClose :size="closeIconSize" />
-            </Button>
-          </div>
-          <img :src="borderClop" alt="forest" class="land-full-image mx-auto" />
-        </DialogPanel>
+        <TransitionChild
+          enter="duration-[400ms] ease-out"
+          enter-from="opacity-0"
+          enter-to="opacity-100"
+          leave="duration-[400ms] ease-in"
+          leave-from="opacity-100"
+          leave-to="opacity-0"
+        >
+          <DialogPanel class="dialog-panel flex flex-col">
+            <div class="flex justify-end">
+              <Button @click="closeArtModal">
+                <ModalClose :size="closeIconSize" />
+              </Button>
+            </div>
+            <img
+              :src="borderClop"
+              alt="forest"
+              class="land-full-image mx-auto"
+            />
+          </DialogPanel>
+        </TransitionChild>
       </div>
     </Dialog>
   </TransitionRoot>
@@ -78,6 +89,6 @@ screen.addListenerOnResize(() => {
 }
 
 .dialog-panel {
-  @apply m-4 p-2 lg:p-4 rounded-md bg-[#D5D5D5] lg:w-1/2;
+  @apply m-4 p-2 lg:p-4 rounded-md bg-[#D5D5D5];
 }
 </style>
