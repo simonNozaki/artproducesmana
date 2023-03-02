@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import ApplicationTab from "./ApplicationTab.vue";
 import GlobalNavigation from "./GlobalNavigation.vue";
 
 const navigationIsOpen = ref(false);
