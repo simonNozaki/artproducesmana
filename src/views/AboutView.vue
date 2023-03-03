@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="m-3 md:m-6">
+  <div class="about-container">
+    <div class="m-3 md:m-6 pt-10">
       <h2 class="about-title">CastAnArtとは</h2>
       <div class="about-paragraph">
         <p>
@@ -23,12 +23,17 @@
 </template>
 
 <style scoped>
+.about-container {
+  height: 100vh;
+  @apply bg-gradient-to-tr from-cyan-300 to-fuchsia-300;
+}
+
 .about-title {
   @apply text-2xl font-bold text-center;
 }
 
 .about-paragraph {
-  @apply mx-auto mt-10 lg:w-1/2;
+  @apply mx-auto mt-10 md:w-1/2;
 }
 
 .about-paragraph p {
