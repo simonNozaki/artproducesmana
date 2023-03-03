@@ -46,7 +46,26 @@
   "nurturing-peatland": "育成炭泥地",
   "sunbaked-canyon": "灼熱大峡谷",
   "waterlogged-grove": "冠水樹林帯",
+
+  "gracial-fortress": "氷河の城砦",
+  "drowned-catacomb": "水没した地下墓地",
+  "dragonskull-summit": "竜髑髏の山頂",
+  "rootbound-crag": "根縛りの岩山",
+  "sunpetal-grove": "陽花弁の木立ち",
+  "isolated-chapel": "孤立した礼拝堂",
+  "sulfur-falls": "硫黄の滝",
+  "clifftop-retreat": "断崖の避難所",
+  "hinterland-harbor": "内陸の湾港",
+  "woodland-cemetery": "森林の墓地",
+
   "prismatic-vista": "虹色の眺望",
   "cavern-of-souls": "魂の洞窟",
-  "urzas-saga": "ウルザの物語"
+  "urzas-saga": "ウルザの物語",
+  "lotus-field": "睡蓮の原野",
+  "gemstone-mine": "宝石鉱山",
+  "yavimaya-cradle-of-growth": "成長の揺り篭、ヤヴィマヤ",
+  "vesuva": "ヴェズーヴァ",
+  "flagstones-of-trokair": "トロウケアの敷石",
+  "gemstone-caverns": "宝石の洞窟",
+  "tolaria-west": "トレイリア西部"
 }

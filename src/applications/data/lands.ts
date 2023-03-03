@@ -1,4 +1,3 @@
-// TODO: 日本語もつけて、レンダリング時に日本語の方を使うようにさせる
 export const LANDS = [
   // Basic lands
   "island",
@@ -54,8 +53,28 @@ export const LANDS = [
   "nurturing-peatland",
   "sunbaked-canyon",
   "waterlogged-grove",
+  // Check lands
+  "gracial-fortress",
+  "drowned-catacomb",
+  "dragonskull-summit",
+  "rootbound-crag",
+  "sunpetal-grove",
+  "isolated-chapel",
+  "sulfur-falls",
+  "clifftop-retreat",
+  "hinterland-harbor",
+  "woodland-cemetery",
+  // time spiral
+  "flagstones-of-trokair",
+  "gemstone-caverns",
+  "tolaria-west",
+
   // others
   "prismatic-vista",
   "cavern-of-souls",
   "urzas-saga",
+  "vesuva",
+  "yavimaya-cradle-of-growth",
+  "lotus-field",
+  "gemstone-mine",
 ] as const;
