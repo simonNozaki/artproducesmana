@@ -1,6 +1,20 @@
+<script setup lang="ts">
+import { useCard } from "@/composables/useCard";
+const { Card } = useCard();
+
+const prismaticVista = await new Card("prismatic-vista").getByName();
+</script>
+
 <template>
   <div class="about-container">
-    <div class="m-3 md:m-6 pt-10">
+    <div class="about-cover">
+      <img
+        :src="prismaticVista.artClop"
+        :alt="prismaticVista.name"
+        class="about-cover-image"
+      />
+    </div>
+    <div class="m-3 md:m-6">
       <h2 class="about-title">CastAnArtとは</h2>
       <div class="about-paragraph">
         <p>
@@ -15,7 +29,8 @@
           同じカードでも複数の絵違いや枠違いが存在することもあり、コレクターにとっても人気があります。
         </p>
         <p>
-          <span class="font-semibold">CastAnArt</span>では、そのようなマジックの美麗なイラストに焦点を当てて、人気のあるカードを中心にじっくりイラストを眺めることができます。
+          <span class="font-semibold">CastAnArt</span
+          >では、そのようなマジックの美麗なイラストに焦点を当てて、人気のあるカードを中心にじっくりイラストを眺めることができます。
         </p>
       </div>
     </div>
@@ -25,7 +40,15 @@
 <style scoped>
 .about-container {
   height: 100vh;
-  @apply bg-gradient-to-tr from-cyan-300 to-fuchsia-300;
+  @apply bg-gradient-to-tr from-[#1DE9B6] to-[#B388FF];
+}
+
+.about-cover {
+  @apply h-80 mx-auto;
+}
+
+.about-cover-image {
+  @apply w-full h-full object-cover;
 }
 
 .about-title {
@@ -37,6 +60,6 @@
 }
 
 .about-paragraph p {
-  @apply my-5 text-sm lg:text-base;
+  @apply my-10 text-sm lg:text-base text-gray-700;
 }
 </style>
