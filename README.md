@@ -1,7 +1,7 @@
 # CastAnArt
 [Magic: The Gathering](https://mtg-jp.com/)の、イラストをじっくり鑑賞できるツールです。いくつかのテーマに沿ってランダムにカードを鑑賞することができる。
 
-![preview](docs/images/preview.mov)
+![preview](docs/images/preview.png)
 
 ## Recommended IDE Setup
 
