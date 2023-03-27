@@ -77,4 +77,6 @@ export const LANDS = [
   "yavimaya-cradle-of-growth",
   "lotus-field",
   "gemstone-mine",
+  "fabled-passage",
+  "mana-confluence",
 ] as const;
