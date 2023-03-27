@@ -1,0 +1,51 @@
+import { Meta, Story } from '@storybook/addon-docs';
+
+import Button from './Button.vue';
+
+<Meta title="CastAnArt/Button" component={ Button } />
+
+# ボタン
+汎用ボタンコンポーネントです。
+
+export const Template = (args) => ({
+  components: { Button },
+  template: `<Button>ボタン</Button>`,
+});
+
+<Story
+  name="Primary"
+  args={{
+    order: 'primary',
+    size: 'medium'
+  }}
+>
+  { Template.bind() }
+</Story>
+
+<Story
+  name="Medium"
+  args={{
+    order: 'primary',
+    size: 'small'
+  }}
+>
+  { Template.bind() }
+</Story>
+
+<Story name="Secondary">
+  {() => {
+    return {
+      components: { Button },
+      template: `<Button order="secondary">ボタン</Button>`,
+    };
+  }}
+</Story>
+
+<Story name="SecondarySmall">
+  {() => {
+    return {
+      components: { Button },
+      template: `<Button order="secondary" size="small">ボタン</Button>`,
+    };
+  }}
+</Story>
