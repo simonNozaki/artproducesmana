@@ -23,9 +23,7 @@ const classes = computed(() => ({
 
 <template>
   <button :class="classes" @click="click">
-    <span>
-      <slot></slot>
-    </span>
+    <slot></slot>
   </button>
 </template>
 

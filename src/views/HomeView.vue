@@ -58,8 +58,15 @@ const card = computed<SearchCardResult>({
     <!-- 左側 -->
     <div class="grow">
       <div class="flex place-content-center">
-        <Button @click="setNewCard" v-if="screenIsOverMedium()">
-          <SchevronLeft size="36" />
+        <Button
+          @click="backToPrevious"
+          v-if="screenIsOverMedium()"
+          size="small"
+        >
+          <div class="float-left">
+            <SchevronLeft size="36" />
+          </div>
+          <span class="align-middle">戻る</span>
         </Button>
       </div>
     </div>
@@ -81,11 +88,22 @@ const card = computed<SearchCardResult>({
     <div class="grow">
       <div class="flex justify-center">
         <!-- 画面幅がタブレット以下ではカード更新ボタンを下に設置する -->
-        <Button @click="setNewCard" v-if="!screenIsOverMedium()" class="mx-2">
-          <SchevronLeft size="36" />
+        <Button
+          @click="setNewCard"
+          v-if="!screenIsOverMedium()"
+          class="mx-2"
+          size="small"
+        >
+          <div class="float-left">
+            <SchevronLeft size="36" />
+          </div>
+          <span class="align-middle">戻る</span>
         </Button>
-        <Button @click="backToPrevious" class="mx-2">
-          <SchevronRight size="36" />
+        <Button @click="setNewCard" class="mx-2" size="small">
+          <span class="align-middle">次へ</span>
+          <div class="float-right">
+            <SchevronRight size="36" />
+          </div>
         </Button>
       </div>
     </div>
