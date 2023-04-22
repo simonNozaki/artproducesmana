@@ -35,6 +35,12 @@
   "boseiju-who-endures": "耐え抜くもの、母聖樹",
   "eiganjo-seat-of-the-empire": "皇国の地、永岩城",
   "tendo-ice-bridge": "氷の橋、天戸",
+  "eiganjo-castle": "永岩城",
+  "minamo-school-at-waters-edge": "水辺の学者、水面院",
+  "shinkathe-bloodsoaked-keep": "血に染まりし城砦、真火",
+  "okina-temple-to-the-grandfathers": "先祖の院、翁神社",
+  "shizo-deaths-storehouse": "死の溜まる地、死蔵",
+  "boseiju-who-shelters-all": "すべてを護るもの、母聖樹",
   "castle-vantress": "ヴァントレス城",
   "castle-ardenvale": "アーデンベイル城",
   "castle-locthwain": "ロークスワイン城",
@@ -69,5 +75,8 @@
   "gemstone-caverns": "宝石の洞窟",
   "tolaria-west": "トレイリア西部",
   "fabled-passage": "寓話の小道",
-  "mana-confluence": "マナの合流点"
+  "mana-confluence": "マナの合流点",
+  "rishadan-port": "リシャーダの港",
+  "city-of-brass": "真鍮の都",
+  "karakas": "カラカス"
 }

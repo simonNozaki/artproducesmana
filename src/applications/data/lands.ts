@@ -40,6 +40,12 @@ export const LANDS = [
   "boseiju-who-endures",
   "eiganjo-seat-of-the-empire",
   "tendo-ice-bridge",
+  "eiganjo-castle",
+  "minamo-school-at-waters-edge",
+  "shinkathe-bloodsoaked-keep",
+  "okina-temple-to-the-grandfathers",
+  "shizo-deaths-storehouse",
+  "boseiju-who-shelters-all",
   // Eldraine castles
   "castle-vantress",
   "castle-ardenvale",
@@ -79,4 +85,7 @@ export const LANDS = [
   "gemstone-mine",
   "fabled-passage",
   "mana-confluence",
+  "rishadan-port",
+  "city-of-brass",
+  "karakas",
 ] as const;
