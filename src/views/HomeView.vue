@@ -63,7 +63,7 @@ const card = computed<SearchCardResult>({
           v-if="screenIsOverMedium()"
           size="small"
         >
-          <div class="float-left">
+          <div class="inline-block align-middle">
             <SchevronLeft size="36" />
           </div>
           <span class="align-middle">戻る</span>
@@ -99,9 +99,9 @@ const card = computed<SearchCardResult>({
           </div>
           <span class="align-middle">戻る</span>
         </Button>
-        <Button @click="setNewCard" class="mx-2" size="small">
+        <Button @click="setNewCard" size="small">
           <span class="align-middle">次へ</span>
-          <div class="float-right">
+          <div class="inline-block align-middle">
             <SchevronRight size="36" />
           </div>
         </Button>
