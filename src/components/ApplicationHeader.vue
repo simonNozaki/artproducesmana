@@ -34,7 +34,10 @@ const closeNavigation = () => {
           </svg>
           <p class="title-element mx-1">CastAnArt</p>
         </h1>
-        <button class="flex justify-end" @click="openNavigation">
+        <button
+          class="flex justify-end global-navigation-button"
+          @click="openNavigation"
+        >
           <svg :width="36" :height="36" viewBox="0 0 24 24">
             <path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z"></path>
           </svg>

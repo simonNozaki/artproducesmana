@@ -61,7 +61,7 @@ screen.addListenerOnResize(() => {
           leave-to="opacity-0"
         >
           <DialogPanel class="dialog-panel flex flex-col">
-            <div class="flex justify-end">
+            <div class="flex justify-end modal-close">
               <Button @click="closeArtModal">
                 <ModalClose :size="closeIconSize" />
               </Button>
